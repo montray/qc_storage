@@ -1,8 +1,6 @@
 create table if not exists storage
 (
-	product_id int not null
-		constraint storage_pk
-			primary key
+	product_id int not null constraint storage_pk primary key,
 	quantity int default 0 not null
 );
 

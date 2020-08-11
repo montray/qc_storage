@@ -80,6 +80,7 @@ func (sh *StoreHandler) Get(c *gin.Context) {
 	productId, err := strconv.Atoi(c.Param("product_id"))
 	if err != nil || productId == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "product_id must be integer and greater than 0"})
+		return
 	}
 
 	qty := sh.storageService.Get(productId)
